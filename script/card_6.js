@@ -1,16 +1,20 @@
-document.getElementById('glassdoar-btn').addEventListener('click', function() {
-    
-    alert("Board updated successfully");
-
+document.getElementById('glassdoar-btn').addEventListener('click', function () {
     const Task = getInteger('navbar-task-count');
     const assignTask = getInteger('assigned-task-count');
-    const taskCount = Task + 1;
-    const assignTaskCount = assignTask - 1;
 
-    document.getElementById('navbar-task-count').innerText = taskCount;
-    document.getElementById('assigned-task-count').innerText = assignTaskCount; 
+    if (assignTask > 0) {
 
-    this.disabled = true; 
+        alert("Board updated successfully");
+        const taskCount = Task + 1;
+        const assignTaskCount = assignTask - 1;
 
-}, 
-{ once: true });
+        document.getElementById('navbar-task-count').innerText = taskCount;
+        document.getElementById('assigned-task-count').innerText = assignTaskCount;
+
+        if (assignTaskCount === 0) {
+            alert("Congrats! you have completed all the current task");
+        }
+
+        this.disabled = true;
+    }
+});
