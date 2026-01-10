@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='light'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .poppins-font {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-primary': '#3752FD',
+                        'primary': '#F4F7FF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="poppins-font bg-primary">
+    <!-- Header Section -->
+    <header class="md:container mx-auto">
+        <!-- navbar start -->
+        <nav>
+            <section class="navbar bg-white p-6 rounded-lg">
+                <div class="flex-1">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+
+                    </div>
+                    <img src="./assets/logo.png" alt="dev logo">
+                    <a class="font-bold text-4xl ml-2.5">DevBoard</a>
+                </div>
+
+                <div class="">
+                    <div class="bg-primary flex items-center justify-center p-3 mr-9 rounded-[32px]">
+                        <img src="./assets/checkbox.png" alt="">
+                        <p id="navbar-task-count" class="text-3xl font-bold ml-2">23</p>
+                    </div>
+                    <img id="button" src="./assets/theme-btn.png" alt="">
+                </div>
+            </section>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="md:container mx-auto">
+        <section class="mt-5 pb-20">
+            <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Row 1 -->
+                <div class="bg-white p-6 col-span-3 rounded-lg">
+                    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16">
+                        <div class="bg-primary rounded-lg">
+                            <div class="flex p-8 items-center">
+                                <img class="max-w-[28px] max-h-[28px]" src="./assets/checkbox.png" alt="">
+                                <div class="ml-5 text-left">
+                                    <p class="font-medium">Task Assigned</p>
+                                    <p class="text-3xl font-bold">0<span id="assigned-task-count"
+                                            class="text-3xl font-bold">6</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] text-white rounded-lg md:col-span-2">
+                            <div class="flex p-8 items-center">
+                                <img class="max-w-[79px] max-h-[79px]" src="./assets/board.png" alt="">
+                                <div class="ml-5 text-left">
+                                    <p class="font-medium">Discover Something <br> New Today!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-primary rounded-lg">
+                            <div class="flex p-8 items-center">
+                                <img class="max-w-[79px] max-h-[79px]" src="./assets/calender.png" alt="">
+                                <div class="ml-5 text-left">
+                                    <p id="today-day" class="text-xl"></p>
+                                    <p id="today-date" class="text-2xl font-semibold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="grid gap-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Card - 1 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <span class="bg-white max-w-[100px] text-center rounded-lg">ShopEase</span>
+                                <h2 id="taskTitle" class="card-title text-2xl">Fix Mobile Button Issue</h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">The mobile button is not responding or
+                                    displaying correctly on smaller screens.
+                                    Identify the root cause and fix the issue to ensure proper functionality.
+                                </p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="shopEase-btn" class="btn bg-btn-primary text-white">Completed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card - 2 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <p class="bg-white max-w-[100px] text-center rounded-lg">CloudSync</p>
+                                <h2 id="taskTitle2" class="card-title text-2xl">Add Dark Mode</h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Implement a Dark Mode feature that
+                                    allows users to toggle between light and dark themes.
+                                </p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="cloud-btn" class="btn bg-btn-primary text-white" tabindex="-1"
+                                        role="button">
+                                        Completed
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - 3 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <p class="bg-white max-w-[100px] text-center rounded-lg">SwiftPay</p>
+                                <h2 id="taskTitle3" class="card-title text-2xl">Optimize Home page </h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Optimize the homepage for faster load
+                                    time, improved layout consistency, and better user experience.
+
+                                </p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="swiftpay-btn" class="btn bg-btn-primary text-white">Completed</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - 4 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <span class="bg-white max-w-[100px] text-center rounded-lg">Meta</span>
+                                <h2 id="taskTitle4" class="card-title text-2xl">Add new emoji 🤲</h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Need to add a new emoji 🤲 to the system
+                                    emoji set. Ensure the emoji renders correctly across UI, input fields, and stored
+                                    content.</p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="meta-btn" class="btn bg-btn-primary text-white">Completed</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card - 5 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <span class="bg-white max-w-[100px] text-center rounded-lg">Google LLC</span>
+                                <h2 id="taskTitle5" class="card-title text-2xl">Integrate OpenAI API </h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Integrate the OpenAI API into our
+                                    application to generate AI-powered responses based on user input.
+                                </p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="google-btn" class="btn bg-btn-primary text-white">Completed</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card - 6 -->
+                        <div class="card bg-primary">
+                            <div class="card-body space-y-5">
+                                <p class="bg-white max-w-[100px] text-center rounded-lg">Glassdoar</p>
+                                <h2 id="taskTitle6" class="card-title text-2xl">Improve Job searching </h2>
+                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Develop a solution to improve the job
+                                    searching experience by making job discovery faster, smarter, and more relevant for
+                                    users.</p>
+                                <div class="card-actions flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm">Deadline</p>
+                                        <p class="font-medium">21 March 2025</p>
+                                    </div>
+                                    <button id="glassdoar-btn" class="btn bg-btn-primary text-white">Completed</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <div class="flex mb-4 justify-center">
+                        <img src="./assets/activity.png" alt="activity">
+                        <p class="ml-4 font-medium text-xl">Activity Log</p>
+                    </div>
+                    <div class="text-center mb-10">
+                        <button id="clear-history-btn" class="btn bg-btn-primary text-white"
+                            onclick="clearcontent('activity-container')">Clear History</button>
+                    </div>
+                    <div id="activity-container" class="bg-primary">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        function clearcontent(elementID) {
+            document.getElementById(elementID).innerHTML = "";
+        }
+
+    </script>
+
+    <!-- Link utilies file -->
+    <script src="./utilities/utility.js"></script>
+    <!-- link script file -->
+    <script src="./script/random-bg.js"></script>
+    <script src="./script/card_1.js"></script>
+    <script src="./script/card_2.js"></script>
+    <script src="./script/card_3.js"></script>
+    <script src="./script/card_4.js"></script>
+    <script src="./script/card_5.js"></script>
+    <script src="./script/card_6.js"></script>
+    <script src="./script/current-date.js"></script>
+    <script src="./script/activity-card_1.js"></script>
+    <script src="./script/activity-card_2.js"></script>
+    <script src="./script/activity-card_3.js"></script>
+    <script src="./script/activity-card_4.js"></script>
+    <script src="./script/activity-card_5.js"></script>
+    <script src="./script/activity-card_6.js"></script>
+</body>
+
+</html>
