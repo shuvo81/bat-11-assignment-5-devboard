@@ -48,7 +48,7 @@
     </script>
 </head>
 
-<body class="poppins-font bg-primary">
+<body class="poppins-font bg-primary pb-10">
     <!-- Header Section -->
     <header class="md:container mx-auto">
         <!-- navbar start -->
@@ -77,29 +77,29 @@
     </header>
 
     <!-- Collapsible FAQs -->
-    <div class="md:container mx-auto bg-primary">
-        <h2 class="text-3xl font-bold text-center">Blogs</h2>
-        <div class="collapse">
+    <div class="md:container mx-auto">
+        <h2 class="text-3xl font-bold text-center mt-6 mb-6">Blogs</h2>
+        <div class="collapse bg-white mb-4">
             <input type="radio" name="my-accordion-1" checked="checked" />
             <div class="collapse-title text-xl font-medium">Question-1: What are the different ways to select an element
                 in the DOM?</div>
             <div class="collapse-content">
-                <p>There are 5 ways that we can use such as: <br>
-                    1. document.getElementById('id')<br>
+                <p>There are 5 ways that we can use such as:  <br>
+                    1. document.getElementById('id');
                     This method selects a single element by its unique ID attribute.<br>
-                    2. document.getElementsByClassName('className')<br>
+                    2. document.getElementsByClassName('className');
                     This method selects elements based on class name attribute.<br>
-                    3. document.getElementsByTagName('tagName')<br>
+                    3. document.getElementsByTagName('tagName');
                     This method selects elements based on tag name.<br>
-                    4. document.querySelector('Selector')<br>
+                    4. document.querySelector('Selector');
                     This method select the first element that match specific selector.<br>
-                    5. document.querySelectorAll('Selector')<br>
+                    5. document.querySelectorAll('Selector');
                     It returns a Node list of all elements that match the specified css selector.
 
                 </p>
             </div>
         </div>
-        <div class="collapse bg-white">
+        <div class="collapse bg-white mb-4">
             <input type="radio" name="my-accordion-1" />
             <div class="collapse-title text-xl font-medium">Question-2: What is the difference between innerHTML,
                 innerText and textContent?</div>
@@ -109,7 +109,7 @@
                     returns all text, including hidden text and spacing</p>
             </div>
         </div>
-        <div class="collapse bg-white">
+        <div class="collapse bg-white mb-4">
             <input type="radio" name="my-accordion-1" />
             <div class="collapse-title text-xl font-medium">Question-3: What is event delegation in the DOM?</div>
             <div class="collapse-content">
@@ -118,11 +118,13 @@
                     call an event on a particular target using the. target property of the event object.</p>
             </div>
         </div>
-        <div class="collapse bg-white">
+        <div class="collapse bg-white mb-4">
             <input type="radio" name="my-accordion-1" />
             <div class="collapse-title text-xl font-medium">Question-4: What is event bubbling in the DOM?</div>
             <div class="collapse-content">
-                <p>Event bubbling is a fundamental JavaScript mechanism where an event triggered on a child element does not stop there, but "bubbles up" through its ancestor elements in the Document Object Model (DOM).</p>
+                <p>Event bubbling is a fundamental JavaScript mechanism where an event triggered on a child element does
+                    not stop there, but "bubbles up" through its ancestor elements in the Document Object Model (DOM).
+                </p>
             </div>
         </div>
     </div>
@@ -136,7 +138,7 @@
             document.getElementById(elementID).innerHTML = "";
         }
 
-        document.getElementById('back-desk-btn').addEventListener('click',function(){
+        document.getElementById('back-desk-btn').addEventListener('click', function () {
             window.location.href = './index.html';
         })
     </script>
