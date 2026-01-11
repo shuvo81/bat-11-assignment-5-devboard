@@ -77,26 +77,52 @@
     </header>
 
     <!-- Collapsible FAQs -->
-    <div class="join join-vertical w-full">
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-            <input type="radio" name="my-accordion-4" checked="checked" />
-            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+    <div class="md:container mx-auto bg-primary">
+        <h2 class="text-3xl font-bold text-center">Blogs</h2>
+        <div class="collapse">
+            <input type="radio" name="my-accordion-1" checked="checked" />
+            <div class="collapse-title text-xl font-medium">Question-1: What are the different ways to select an element
+                in the DOM?</div>
             <div class="collapse-content">
-                <p>hello</p>
+                <p>There are 5 ways that we can use such as: <br>
+                    1. document.getElementById('id')<br>
+                    This method selects a single element by its unique ID attribute.<br>
+                    2. document.getElementsByClassName('className')<br>
+                    This method selects elements based on class name attribute.<br>
+                    3. document.getElementsByTagName('tagName')<br>
+                    This method selects elements based on tag name.<br>
+                    4. document.querySelector('Selector')<br>
+                    This method select the first element that match specific selector.<br>
+                    5. document.querySelectorAll('Selector')<br>
+                    It returns a Node list of all elements that match the specified css selector.
+
+                </p>
             </div>
         </div>
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-            <input type="radio" name="my-accordion-4" />
-            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+        <div class="collapse bg-white">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">Question-2: What is the difference between innerHTML,
+                innerText and textContent?</div>
             <div class="collapse-content">
-                <p>hello</p>
+                <p>Firstly here innerHTML returns the full HTML content, including tags. Secondly innerText returns only
+                    the visible, rendered text, respecting CSS but ignoring hidden content and tags. At last textContent
+                    returns all text, including hidden text and spacing</p>
             </div>
         </div>
-        <div class="collapse collapse-arrow join-item border-base-300 border">
-            <input type="radio" name="my-accordion-4" />
-            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+        <div class="collapse bg-white">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">Question-3: What is event delegation in the DOM?</div>
             <div class="collapse-content">
-                <p>hello</p>
+                <p>Event Delegation is principally a pattern to handle events efficiently. rather of adding an event
+                    listener to each and every analogous element, we can add an event listener to a parent element and
+                    call an event on a particular target using the. target property of the event object.</p>
+            </div>
+        </div>
+        <div class="collapse bg-white">
+            <input type="radio" name="my-accordion-1" />
+            <div class="collapse-title text-xl font-medium">Question-4: What is event bubbling in the DOM?</div>
+            <div class="collapse-content">
+                <p>Event bubbling is a fundamental JavaScript mechanism where an event triggered on a child element does not stop there, but "bubbles up" through its ancestor elements in the Document Object Model (DOM).</p>
             </div>
         </div>
     </div>
@@ -104,182 +130,15 @@
 
 
 
-    <!-- Main Section -->
-    <main class="md:container mx-auto">
-        <section class="mt-5 pb-20">
-            <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                <!-- Row 1 -->
-                <div class="bg-white p-6 col-span-3 rounded-lg">
-                    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16">
-                        <div class="bg-primary rounded-lg">
-                            <div class="flex p-8 items-center">
-                                <img class="max-w-[28px] max-h-[28px]" src="./assets/checkbox.png" alt="">
-                                <div class="ml-5 text-left">
-                                    <p class="font-medium">Task Assigned</p>
-                                    <p id="assigned-task-count" class="text-3xl font-bold">6</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="discover-something"
-                            class="bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] text-white rounded-lg md:col-span-2">
-                            <div class="flex p-8 items-center">
-                                <img class="max-w-[79px] max-h-[79px]" src="./assets/board.png" alt="">
-                                <div class="ml-5 text-left">
-                                    <p class="text-2xl font-medium">Discover Something<br>New Today!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-primary rounded-lg">
-                            <div class="flex p-8 items-center">
-                                <img class="max-w-[79px] max-h-[79px]" src="./assets/calender.png" alt="">
-                                <div class="ml-5 text-left">
-                                    <p id="today-day" class="text-xl"></p>
-                                    <p id="today-date" class="text-2xl font-semibold"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <div class="grid gap-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        <!-- Card - 1 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <span class="bg-white max-w-[100px] text-center rounded-lg">ShopEase</span>
-                                <h2 id="taskTitle" class="card-title text-2xl">Fix Mobile Button Issue</h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">The mobile button is not responding or
-                                    displaying correctly on smaller screens.
-                                    Identify the root cause and fix the issue to ensure proper functionality.
-                                </p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">21 March 2025</p>
-                                    </div>
-                                    <button id="shopEase-btn" class="btn bg-btn-primary text-white">Completed</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card - 2 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <p class="bg-white max-w-[100px] text-center rounded-lg">CloudSync</p>
-                                <h2 id="taskTitle2" class="card-title text-2xl">Add Dark Mode</h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Implement a Dark Mode feature that
-                                    allows users to toggle between light and dark themes.
-                                </p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">25 March 2025</p>
-                                    </div>
-                                    <button id="cloud-btn" class="btn bg-btn-primary text-white" tabindex="-1"
-                                        role="button">
-                                        Completed
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card - 3 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <p class="bg-white max-w-[100px] text-center rounded-lg">SwiftPay</p>
-                                <h2 id="taskTitle3" class="card-title text-2xl">Optimize Home page </h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Optimize the homepage for faster load
-                                    time, improved layout consistency, and better user experience.
-
-                                </p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">27 March 2025</p>
-                                    </div>
-                                    <button id="swiftpay-btn" class="btn bg-btn-primary text-white">Completed</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card - 4 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <span class="bg-white max-w-[100px] text-center rounded-lg">Meta</span>
-                                <h2 id="taskTitle4" class="card-title text-2xl">Add new emoji 🤲</h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Need to add a new emoji 🤲 to the system
-                                    emoji set. Ensure the emoji renders correctly across UI, input fields, and stored
-                                    content.</p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">30 March 2025</p>
-                                    </div>
-                                    <button id="meta-btn" class="btn bg-btn-primary text-white">Completed</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card - 5 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <span class="bg-white max-w-[100px] text-center rounded-lg">Google LLC</span>
-                                <h2 id="taskTitle5" class="card-title text-2xl">Integrate OpenAI API </h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Integrate the OpenAI API into our
-                                    application to generate AI-powered responses based on user input.
-                                </p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">2 April 2025</p>
-                                    </div>
-                                    <button id="google-btn" class="btn bg-btn-primary text-white">Completed</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card - 6 -->
-                        <div class="card bg-primary">
-                            <div class="card-body space-y-5">
-                                <p class="bg-white max-w-[100px] text-center rounded-lg">Glassdoar</p>
-                                <h2 id="taskTitle6" class="card-title text-2xl">Improve Job searching </h2>
-                                <p class="bg-white line-clamp-2 p-4 rounded-lg">Develop a solution to improve the job
-                                    searching experience by making job discovery faster, smarter, and more relevant for
-                                    users.</p>
-                                <div class="card-actions flex items-center justify-between">
-                                    <div>
-                                        <p class="text-sm">Deadline</p>
-                                        <p class="font-medium">5 April 2025</p>
-                                    </div>
-                                    <button id="glassdoar-btn" class="btn bg-btn-primary text-white">Completed</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg">
-                    <div class="flex mb-4 justify-center">
-                        <img src="./assets/activity.png" alt="activity">
-                        <p class="ml-4 font-medium text-xl">Activity Log</p>
-                    </div>
-                    <div class="text-center mb-10">
-                        <button id="clear-history-btn" class="btn bg-btn-primary text-white"
-                            onclick="clearcontent('activity-container')">Clear History</button>
-                    </div>
-                    <div id="activity-container">
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
     <!-- Activity Log clear history button -->
     <script>
         function clearcontent(elementID) {
             document.getElementById(elementID).innerHTML = "";
         }
+
+        document.getElementById('back-desk-btn').addEventListener('click',function(){
+            window.location.href = './index.html';
+        })
     </script>
 
 
